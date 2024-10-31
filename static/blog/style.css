@@ -1,0 +1,44 @@
+.blogs{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-link{
+    text-decoration: none;
+    width: 70%;
+    border: 2px solid teal;
+    padding: 1rem;
+    padding-top: .4rem;
+    margin: .5rem;
+    border-radius: 1rem;
+    color: rgb(26, 26, 26);
+}
+
+.author{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .6rem;
+}
+
+.author h1{
+    font-size: 1.4rem;
+}
+
+.blog .body{
+    padding-left: 1rem;
+    margin-bottom: 1.6rem;
+}
+
+.blog .time{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.admin{
+    border:2px solid red;
+}
