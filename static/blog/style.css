@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.blog-link{
+.blog{
     text-decoration: none;
     width: 70%;
     border: 2px solid teal;
@@ -18,7 +18,7 @@
     transition: .2s ease;
 }
 
-.blog-link:hover{
+.blog:hover{
     background-color: rgb(240, 255, 247);
 }
 
@@ -31,6 +31,35 @@
 
 .author h1{
     font-size: 1.4rem;
+}
+
+.menu-btn {
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    width: 100px;
+}
+
+.menu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+.menu a:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
 }
 
 .blog .body{
