@@ -21,6 +21,7 @@ header a{
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
     transition: .3s ease;
+    margin: 0 .2rem 0 .2rem;
 }
 
 header a:hover{
