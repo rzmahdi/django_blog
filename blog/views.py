@@ -1,5 +1,6 @@
 from django.views.generic import ListView, CreateView
 from .models import Blog
+from django.urls import reverse_lazy
 
 
 class BlogListView(ListView):
@@ -12,3 +13,4 @@ class BlogCreateView(CreateView):
     model = Blog
     template_name = "blog/write.html"
     fields = ["title", "text", "author", "visable"]
+    success_url = reverse_lazy("blogs")
