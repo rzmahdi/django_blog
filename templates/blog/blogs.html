@@ -9,26 +9,31 @@
     <div class="blogs">
         
         {% for blog in blogs %}
-            {% if blog.visable %}
-            <a class="blog-link" href="#">
-                <div class="blog">
-                    <div class="author">
-                        <h1>{{ blog.title }}</h1>
-                        <span>{{ blog.author }}</span>
-                    </div>
+        {% if blog.visable %}
+        <div class="blog">
+            <div class="author">
+                <h1>{{ blog.title }}</h1>
+                <div class="dropdown">
+                    <span>{{ blog.author }}</span>
                     
-                    <div class="body" >
-                        <p>{{ blog.text }}</p>
-                    </div>
-                    
-                    <div class="time">
-                        <span>{{ blog.creation_time }}</span>
+                    <button onclick="toggleMenu('{{ blog.id }}')" class="menu-btn">⋮</button>                       
+                    <div id="menu-{{blog.id}}" class="menu">
+                        <a href="#">edit</a>
+                        <a href="#">delete</a>
                     </div>
                 </div>
-            </a>
-            {% endif %}
+            </div>
+            
+            <div class="body" >
+                <p>{{ blog.text }}</p>
+            </div>
+            
+            <div class="time">
+                <span>{{ blog.creation_time }}</span>
+            </div>
+        </div>
+        {% endif %}
         {% endfor %}
             
     </div>
 {% endblock content %}
-    
