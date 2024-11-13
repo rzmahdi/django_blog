@@ -20,3 +20,4 @@ class BlogUpdateView(UpdateView):
     model = Blog
     template_name = "blog/edit.html"
     fields = ["title", "text", "visable"]
+    success_url = reverse_lazy("blogs")
