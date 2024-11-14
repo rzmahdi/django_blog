@@ -29,19 +29,3 @@ function toggleDelete(blogId){
         menu.style.display = "block";
     }
 }
-
-window.onclick = function(event) {
-    if (!event.target.matches('.menu-btn')) {
-        const menus = document.querySelectorAll('.menu');
-        menus.forEach(menu => {
-            menu.style.display = "none";
-        });
-    }
-
-    if (!event.target.matches('.delete-btn')) {
-        const menus = document.querySelectorAll('.delete-menu');
-        menus.forEach(menu => {
-            menu.style.display = "none";
-        });
-    }
-}
