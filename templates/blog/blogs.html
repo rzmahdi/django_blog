@@ -11,6 +11,16 @@
         {% for blog in blogs %}
         {% if blog.visable %}
         <div class="blog">
+            <div id="delete-{{blog.id}}" class="delete-menu">
+                <p class="delete-title">Delete message</p>
+                <br>
+                <p class="delete-message">Are you sure you want to delete this<br>blog?</p>
+                <br>
+                <div class="buttons">
+                    <a class="cancel">Cancel</a>
+                    <a class="delete">Delete</a> 
+                </div>
+            </div>
             <div class="author">
                 <h1>{{ blog.title }}</h1>
                 <div class="dropdown">
@@ -19,7 +29,8 @@
                     <button onclick="toggleMenu('{{ blog.id }}')" class="menu-btn">⋮</button>                       
                     <div id="menu-{{blog.id}}" class="menu">
                         <a href="{% url 'update_blog' blog.id %}">edit</a>
-                        <button onclick="toogleDelete('{{ blog.id }}')" class="delete-menu">delete</button>
+                        
+                        <button onclick="toggleDelete('{{ blog.id }}')" class="delete-btn">delete</button>
                     </div>
                 </div>
             </div>
