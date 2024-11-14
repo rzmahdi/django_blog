@@ -29,3 +29,11 @@ function toggleDelete(blogId){
         menu.style.display = "block";
     }
 }
+
+function toggleCancel(blogId){
+    const delete_menu = document.getElementById(`delete-${blogId}`);
+    const menu = document.getElementById(`menu-${blogId}`);
+    
+    delete_menu.style.display = "none";
+    menu.style.display = "none";
+}
