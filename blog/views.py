@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Blog
 from django.urls import reverse_lazy
 
@@ -21,3 +21,8 @@ class BlogUpdateView(UpdateView):
     template_name = "blog/edit.html"
     fields = ["title", "text", "visable"]
     success_url = reverse_lazy("blogs")
+
+
+class BlogDeleteView(DeleteView):
+    model = Blog
+    template_name = "blog/delete.html"
