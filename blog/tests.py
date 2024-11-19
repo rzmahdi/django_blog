@@ -48,3 +48,7 @@ class BlogTest(TestCase):
             "text": "edited Text"
         })
         self.assertEqual(res.status_code, 302)
+
+    def test_blog_delete(self):
+        res = self.client.post(reverse('delete_blog', args='1'))
+        self.assertEqual(res.status_code, 302)
