@@ -41,3 +41,10 @@ class BlogTest(TestCase):
         self.assertEqual(res.status_code, 302)
         self.assertEqual(Blog.objects.last().title, "test create blog")
         self.assertEqual(Blog.objects.last().text, "test text blog")
+
+    def test_blog_edit(self):
+        res = self.client.post(reverse('update_blog', args="1"), {
+            "title": "edited Title",
+            "text": "edited Text"
+        })
+        self.assertEqual(res.status_code, 302)
