@@ -18,9 +18,8 @@
                     
                     <button onclick="toggleMenu('{{ blog.id }}')" class="menu-btn">⋮</button>                       
                     <div id="menu-{{blog.id}}" class="menu">
-                        <a href="{% url 'update_blog' blog.id %}">edit</a>
-                        
-                        <button onclick="toggleDelete('{{ blog.id }}')" class="delete-btn">delete</button>
+                        <a href="{% url 'update_blog' blog.id %}">Edit</a>
+                        <a href="{% url 'delete_blog' blog.id %}">Delete</a>
                     </div>
                 </div>
             </div>
