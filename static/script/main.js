@@ -14,22 +14,6 @@ function toggleMenu(blogId) {
     }
 }
 
-function toggleDelete(blogId){
-    const menus = document.querySelectorAll(".delete-menu");
-    menus.forEach(menu => {
-        if (menu.id !== `delete-${blogId}`){
-            menu.style.display = "none";
-        }
-    });
-
-    const menu = document.getElementById(`delete-${blogId}`);
-    if(menu.style.display === "block"){
-        menu.style.display = "none";
-    }else{
-        menu.style.display = "block";
-    }
-}
-
 function toggleCancel(blogId){
     const delete_menu = document.getElementById(`delete-${blogId}`);
     const menu = document.getElementById(`menu-${blogId}`);
