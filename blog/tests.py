@@ -31,3 +31,13 @@ class BlogTest(TestCase):
         res = self.client.get(reverse("blogs"))
         self.assertEqual(res.status_code, 200)
         self.assertTemplateUsed(res, "blog/blogs.html")
+
+    def test_create_blog(self):
+        res = self.client.post(reverse('new_blog'), {
+            "title": "test create blog",
+            "text": "test text blog",
+            "author": self.user.id
+        })
+        self.assertEqual(res.status_code, 302)
+        self.assertEqual(Blog.objects.last().title, "test create blog")
+        self.assertEqual(Blog.objects.last().text, "test text blog")
