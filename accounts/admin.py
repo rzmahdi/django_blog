@@ -8,5 +8,6 @@ class CustomUserAdmin(UserAdmin):
     model = CustomUserModel
     add_form = forms.SingUpForm
     form = forms.LoginForm
+    list_display = ["username", "email", "is_staff"]
 
 admin.site.register(CustomUserModel, CustomUserAdmin)
