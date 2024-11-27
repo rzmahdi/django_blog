@@ -8,6 +8,10 @@ class BlogListView(ListView):
     template_name = "blog/blogs.html"
     context_object_name = "blogs"
 
+    def get_queryset(self):
+        return Blog.objects.all().order_by('-creation_time')
+    
+
 
 class BlogCreateView(CreateView):
     model = Blog
