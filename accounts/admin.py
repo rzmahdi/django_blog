@@ -1,3 +1,12 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from . import forms
+from .models import CustomUserModel
 
-# Register your models here.
+
+class CustomUserAdmin(UserAdmin):
+    model = CustomUserModel
+    add_form = forms.SingUpForm
+    form = forms.LoginForm
+
+admin.site.register(CustomUserModel, CustomUserAdmin)
