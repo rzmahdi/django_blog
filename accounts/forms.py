@@ -12,4 +12,4 @@ class SingUpForm(UserCreationForm):
 class LoginForm(UserChangeForm):
     class Meta:
         model = CustomUserModel
-        # fields = ('username', 'email', 'birth_date')
+        fields = ('username', 'email', 'birth_date')
