@@ -9,5 +9,8 @@ class CustomUserAdmin(UserAdmin):
     add_form = forms.SingUpForm
     form = forms.LoginForm
     list_display = ["username", "email", "is_staff"]
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {"fields": ("birth_date", )}),
+    )
 
 admin.site.register(CustomUserModel, CustomUserAdmin)
