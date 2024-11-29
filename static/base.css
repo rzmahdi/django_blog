@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -9,6 +11,9 @@ body{
 }
 
 header{
+    font-family: "Lilita One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
     border-bottom: 2px solid;
     border-radius: 5px;
     padding: 1rem;
@@ -21,7 +26,8 @@ header a{
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
     transition: .3s ease;
-    margin: 0 .2rem 0 .2rem;
+    margin: 0 .5rem;
+    font-size: 1.1rem;
 }
 
 header a:hover{
