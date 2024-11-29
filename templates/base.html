@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block meta %}{% endblock meta %}
-    
+
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <script src="https://kit.fontawesome.com/f481dde2ad.js" crossorigin="anonymous"></script>
     
@@ -30,7 +30,14 @@
                 <a href="{% url 'register' %}">Register</a>
                 
                 {% else %}
-                <a href="{% url 'logout' %}">Logout</a>
+                <div class="dropdown">
+                    <i class="fa-solid fa-user-large"></i>
+                                           
+                    <div class="user-menu">
+                        <a href="{% url 'password_change' %}">Change Password</a>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </div>
+                </div>
             {% endif %}
         </div>
     </header>
