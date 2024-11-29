@@ -15,6 +15,7 @@
 
 .form form input[type="text"],
 .form form input[type="password"],
+.form form input[type="email"],
 .form form textarea,
 .form form select {
     width: 100%;
@@ -26,7 +27,7 @@
 }
 
 .form form input[type="submit"] {
-    background-color: #5c85d6;
+    background-color: teal;
     color: white;
     border: none;
     padding: 12px;
@@ -37,7 +38,7 @@
 }
 
 .form form input[type="submit"]:hover {
-    background-color: #4a6fb1;
+    background-color: rgb(0, 156, 156);
 }
 
 .form h1, h2, p {
@@ -54,4 +55,15 @@
 .form h2 {
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+.helptext{
+    display: none;
+}
+
+.errorlist{
+    color: red;
+    list-style: none;
+    font-size: .9rem;
+    font-weight: bold;
 }
