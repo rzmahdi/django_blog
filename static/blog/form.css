@@ -57,6 +57,24 @@
     margin-bottom: 10px;
 }
 
+.form form .username{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form form span{
+    text-align: center;
+    background-color: rgba(0, 88, 88, 0.87);
+    color: white;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    width: fit-content;
+    padding: .5rem;
+    border-radius: 30px;
+}
+
 .helptext{
     display: none;
 }
