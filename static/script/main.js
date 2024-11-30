@@ -21,3 +21,12 @@ function toggleCancel(blogId){
     delete_menu.style.display = "none";
     menu.style.display = "none";
 }
+
+window.onclick = function(event){
+    if(!event.target.matches('.menu-btn')){
+        const menus = document.querySelectorAll('.menu');
+        menus.forEach(menu => {
+            menu.style.display = "none";
+        })
+    }
+}
