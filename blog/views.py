@@ -16,8 +16,12 @@ class BlogListView(ListView):
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Blog
     template_name = "blog/write.html"
-    fields = ["title", "text", "author", "visable"]
+    fields = ["title", "text", "visable"]
     success_url = reverse_lazy("blogs")
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class BlogUpdateView(LoginRequiredMixin, UpdateView):
