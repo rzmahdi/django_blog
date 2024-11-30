@@ -76,6 +76,7 @@ header .register .dropdown .user-menu {
     right: 30px;
     animation-name: show;
     animation-duration: .3s;
+    z-index: 1;
 }
 
 header .register .dropdown .user-menu a{
