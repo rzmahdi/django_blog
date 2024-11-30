@@ -1,3 +1,13 @@
+@keyframes show{
+    from{
+        opacity: 0;
+        filter: blur(5px);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 .blogs{
     margin: 1rem;
     display: flex;
@@ -55,6 +65,10 @@
     width: 100px;
 }
 
+.menu.show{
+    display: block;
+    animation: show .3s;
+}
 .menu a {
     display: block;
     padding: 8px;
