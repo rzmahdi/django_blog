@@ -31,7 +31,10 @@
                 
                 {% else %}
                 <div class="dropdown">
-                    <i class="fa-solid fa-user-large"></i>
+                    <div class="user-dropdown">
+                        <i class="fa-solid fa-user-large"></i>
+                        <span>{{user}}</span> 
+                    </div>
                                            
                     <div class="user-menu">
                         <a href="{% url 'password_change' %}">Change Password</a>

@@ -48,14 +48,21 @@ header a:hover{
 
 header .register .dropdown i{
     color: white;
-    padding: .5rem;
+}
+
+header .register .dropdown .user-dropdown{
     background-color: black;
     border-radius: 1000px;
     cursor: pointer;
+    padding: .5rem;
 }
 
-header .register .dropdown i:hover{
-    background-color: rgba(0, 0, 0, 0.6);
+header .register .dropdown .user-dropdown span{
+    color: white;
+}
+
+header .register .dropdown .user-dropdown:hover{
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 header .register .dropdown:hover .user-menu{
