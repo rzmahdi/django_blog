@@ -3,6 +3,7 @@ from .models import Blog
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
+
 class BlogListView(ListView):
     model = Blog
     template_name = "blog/blogs.html"
@@ -11,7 +12,6 @@ class BlogListView(ListView):
     def get_queryset(self):
         return Blog.objects.all().order_by('-creation_time')
     
-
 
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Blog
