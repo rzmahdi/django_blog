@@ -16,11 +16,13 @@
                 <div class="dropdown">
                     <span>{{ blog.author }}</span>
                     
+                    {% if blog.author == user %}
                     <button onclick="toggleMenu('{{ blog.id }}')" class="menu-btn">⋮</button>                       
                     <div id="menu-{{blog.id}}" class="menu">
                         <a href="{% url 'update_blog' blog.id %}">Edit</a>
                         <a href="{% url 'delete_blog' blog.id %}">Delete</a>
                     </div>
+                    {% endif %}
                 </div>
             </div>
             
