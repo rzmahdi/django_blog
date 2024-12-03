@@ -17,16 +17,24 @@
 }
 
 .blog{
-    position: relative;
-    text-decoration: none;
     width: 70%;
+    
+    position: relative;
+
+    text-decoration: none;
+    
     border: 2px solid teal;
+    border-radius: 1rem;
+    
+    color: rgb(26, 26, 26);
     background-color: #f0f0f0;
+    
     padding: 1rem;
     padding-top: .4rem;
+    
     margin: .5rem;
-    border-radius: 1rem;
-    color: rgb(26, 26, 26);
+    margin-top: 1rem;
+    
     transition: .2s ease;
 }
 
@@ -112,4 +120,38 @@
 
 .admin{
     border:2px solid red;
+}
+
+
+/* comments */
+
+.comments{
+    width: 60%;
+}
+
+.comments .comment{
+    width: 100%;
+    background-color: white;
+
+    padding: .5rem;
+    margin-bottom: .3rem;
+
+    border-radius: 5px;
+}
+
+.comments .comment .comment-author{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    font-size: 1.1rem;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.comments .comment .comment-text{
+    word-wrap: break-word;
+
+    margin-left: .5rem;
 }
