@@ -10,6 +10,22 @@
     }
 }
 
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: teal;
+}
+
+::-webkit-scrollbar-thumb{
+    background: white;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: rgba(255, 255, 255, 0.7);
+}
+
 
 *{
     padding: 0;
