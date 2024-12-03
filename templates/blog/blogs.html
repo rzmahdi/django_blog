@@ -34,6 +34,27 @@
                 <span>{{ blog.creation_time }}</span>
             </div>
         </div>
+
+        <div class="comments">
+            
+            {% for comment in blog.comments.all %}
+                <div class="coment">
+
+                    <div class="comment-author">
+                        <span>{{comment.author}}</span>
+                    </div>
+
+                    <div class="comment-text">
+                        <p>
+                            {{comment.comment}}
+                        </p>
+                    </div>
+
+                </div>
+            {% endfor %}
+                
+        </div>
+
         {% endif %}
         {% endfor %}
             
