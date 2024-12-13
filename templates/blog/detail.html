@@ -4,6 +4,7 @@
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/form.css' %}">
     <link rel="stylesheet" href="{% static 'blog/detail.css' %}">
 {% endblock style %}
 
@@ -52,5 +53,13 @@
             </div>
         {% endfor %}
             
+    </div>
+
+    <div class="form">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_div}}
+            <input type="submit" value="Comment">
+        </form>
     </div>
 {% endblock content %}
