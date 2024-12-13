@@ -1,7 +1,56 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}{{blog.title}}{% endblock title %}
 
+{% block style %}
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/detail.css' %}">
+{% endblock style %}
+
+
 {% block content %}
-    <h1>{{blog.title}}</h1>
-    <p>{{blog.text}}</p>
+    <div class="blog">
+        <div class="author">
+            <h1>{{ blog.title }}</h1>
+            <div class="dropdown">
+                <span>{{ blog.author }}</span>
+                
+                {% if blog.author == user %}
+                <button onclick="toggleMenu('{{ blog.id }}')" class="menu-btn">⋮</button>                       
+                <div id="menu-{{blog.id}}" class="menu">
+                    <a href="{% url 'update_blog' blog.id %}">Edit</a>
+                    <a href="{% url 'delete_blog' blog.id %}">Delete</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="body" >
+            <p>{{ blog.text }}</p>
+        </div>
+        
+        <div class="time">
+            <span>{{ blog.creation_time }}</span>
+        </div>
+    </div>
+
+    <div class="comments">
+            
+        {% for comment in blog.comments.all %}
+            <div class="comment">
+
+                <div class="comment-author">
+                    <span>{{comment.author}}</span>
+                </div>
+
+                <div class="comment-text">
+                    <p>
+                        {{comment.comment}}
+                    </p>
+                </div>
+
+            </div>
+        {% endfor %}
+            
+    </div>
 {% endblock content %}
