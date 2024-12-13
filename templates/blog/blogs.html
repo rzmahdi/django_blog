@@ -10,30 +10,32 @@
         
         {% for blog in blogs %}
         {% if blog.visable %}
-        <div class="blog">
-            <div class="author">
-                <h1>{{ blog.title }}</h1>
-                <div class="dropdown">
-                    <span>{{ blog.author }}</span>
-                    
-                    {% if blog.author == user %}
-                    <button onclick="toggleMenu('{{ blog.id }}')" class="menu-btn">⋮</button>                       
-                    <div id="menu-{{blog.id}}" class="menu">
-                        <a href="{% url 'update_blog' blog.id %}">Edit</a>
-                        <a href="{% url 'delete_blog' blog.id %}">Delete</a>
+        <a href="{{blog.get_absolute_url}}">
+            <div class="blog">
+                <div class="author">
+                    <h1>{{ blog.title }}</h1>
+                    <div class="dropdown">
+                        <span>{{ blog.author }}</span>
+                        
+                        {% if blog.author == user %}
+                        <button onclick="toggleMenu('{{ blog.id }}')" class="menu-btn">⋮</button>                       
+                        <div id="menu-{{blog.id}}" class="menu">
+                            <a href="{% url 'update_blog' blog.id %}">Edit</a>
+                            <a href="{% url 'delete_blog' blog.id %}">Delete</a>
+                        </div>
+                        {% endif %}
                     </div>
-                    {% endif %}
+                </div>
+                
+                <div class="body" >
+                    <p>{{ blog.text }}</p>
+                </div>
+                
+                <div class="time">
+                    <span>{{ blog.creation_time }}</span>
                 </div>
             </div>
-            
-            <div class="body" >
-                <p>{{ blog.text }}</p>
-            </div>
-            
-            <div class="time">
-                <span>{{ blog.creation_time }}</span>
-            </div>
-        </div>
+        </a>
 
         <div class="comments">
             
