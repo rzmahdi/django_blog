@@ -1,7 +1,9 @@
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic.edit import FormMixin
 from .models import Blog
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from .forms import CommentForm
 
 
 class BlogListView(ListView):
@@ -12,6 +14,11 @@ class BlogListView(ListView):
     def get_queryset(self):
         return Blog.objects.all().order_by('-creation_time')
     
+
+class BlogDetailView(DetailView):
+    model = Blog
+    template_name = "blog/detail.html"
+
 
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Blog
